@@ -1,0 +1,166 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --color-bg: hsl(220 20% 96%);
+  --color-surface: hsl(0 0% 100%);
+  --color-ink: hsl(220 15% 20%);
+  --color-heading: hsl(220 18% 14%);
+  --color-muted: hsl(220 10% 40%);
+  --color-line: hsl(220 15% 60%);
+  --color-brand: hsl(120 100% 23%);
+  --color-on-brand: hsl(0 0% 100%);
+  --color-accent: hsl(35 90% 32%);
+  --color-ring: hsl(210 90% 45%);
+}
+
+body {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  background-color: var(--color-bg);
+  color: var(--color-ink);
+  font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+h1 {
+  font-family: Georgia, "Iowan Old Style", Cambria, serif;
+  font-size: 2.5rem;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--color-heading);
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.35rem;
+  line-height: 1.2;
+  color: var(--color-heading);
+}
+
+p {
+  font-size: 1rem;
+  color: var(--color-ink);
+}
+
+.card {
+  padding: 1.5rem 1.75rem;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-line);
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 12px hsl(220 30% 20% / 0.12);
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: var(--color-muted);
+  hyphens: auto;
+  text-wrap: pretty;
+}
+
+.destaque h2 {
+  color: var(--color-accent);
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-on-brand);
+  background-color: var(--color-brand);
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: transform 180ms ease-out, background-color 180ms ease-out;
+}
+
+.btn:hover {
+  background-color: hsl(120 100% 18%);
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  background-color: hsl(120 100% 15%);
+}
+
+.btn:focus-visible {
+  outline: 3px solid var(--color-ring);
+  outline-offset: 2px;
+}
+
+.btn-primary {
+  background-color: var(--color-accent);
+}
+
+.btn.btn-primary:hover {
+  background-color: hsl(35 90% 26%);
+}
+
+.btn.btn-primary:active {
+  background-color: hsl(35 90% 22%);
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.btn-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: hsl(220 15% 10%);
+    --color-surface: hsl(220 15% 15%);
+    --color-ink: hsl(220 10% 88%);
+    --color-heading: hsl(220 12% 95%);
+    --color-muted: hsl(220 10% 68%);
+    --color-line: hsl(220 12% 32%);
+    --color-brand: hsl(120 70% 42%);
+    --color-on-brand: hsl(220 20% 8%);
+    --color-accent: hsl(35 85% 58%);
+    --color-ring: hsl(210 90% 65%);
+  }
+
+  .card {
+    box-shadow: 0 6px 18px hsl(220 40% 4% / 0.5);
+  }
+
+  .btn:hover {
+    background-color: hsl(120 70% 48%);
+  }
+
+  .btn:active {
+    background-color: hsl(120 70% 54%);
+  }
+
+  .btn.btn-primary:hover {
+    background-color: hsl(35 85% 66%);
+  }
+
+  .btn.btn-primary:active {
+    background-color: hsl(35 85% 72%);
+  }
+}
+
+@media (min-width: 40rem) {
+  .btn-container {
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
